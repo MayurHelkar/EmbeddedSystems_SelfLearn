@@ -1,13 +1,14 @@
 #1. Introduction to Microcontrollers
 
-| Type  | Questions                                                                                                                                 |
-| ----- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| What  | What is a microcontroller? What are its main components? What is the difference between a microcontroller and a microprocessor?           |
-| Why   | Why are microcontrollers used instead of general-purpose computers in embedded systems? Why are they preferred in low-power applications? |
-| How   | How does a microcontroller execute a program? How is it programmed and debugged?                                                          |
-| Where | Where are microcontrollers commonly used (home appliances, automotive, IoT)?                                                              |
-| When  | When should you choose a microcontroller over a microprocessor or FPGA?                                                                   |
-| Who   | Who designs microcontrollers? Who typically programs them (engineers, hobbyists)?                                                         |
+| Type  | Questions                                                                                                                                 | | | |
+|       | 🟡 Basic                                                                                                                                  | 🟢 Intermediate | 🔵 Advanced | 🔴 Expert |
+| ----- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------ | ------ | ------ |
+| What  | What is a microcontroller?<br> What are its main components?<br> What is the difference between a microcontroller and a microprocessor?   | What is firmware? | What is real-time constraint in microcontrollers? | What defines a hard vs soft real-time system? |
+| Why   | Why are microcontrollers used instead of general-purpose computers in embedded systems?<br> Why are they preferred in low-power applications?<br> Why is it called an embedded system? | Why are microcontrollers optimized for specific tasks? | Why is determinism more important than speed? | Why can adding features break real-time guarantees? |
+| How   | How does a microcontroller execute a program?<br> How is it programmed and debugged?<br> How is a microcontroller different from a computer? | How does a microcontroller boot up? | How does architecture affect execution predictability? | How would you architect a fail-safe embedded system? |
+| Where | Where are microcontrollers commonly used (home appliances, automotive, IoT)?<br> Where are microcontrollers used in daily life? | Where does embedded firmware reside? | Where do embedded systems fail under load? | Where do timing violations typically originate? |
+| When  | When should you choose a microcontroller over a microprocessor or FPGA?<br> When do we prefer microcontrollers over PCs? | When do you upgrade firmware? | When does system latency become critical? | When should you migrate from MCU to RTOS/Linux? |
+| Who   | Who designs microcontrollers?<br> Who typically programs them (engineers, hobbyists)?<br> Who uses microcontrollers (industries, roles)? | Who writes firmware vs hardware design? | Who defines timing constraints in a project? | Who owns system-level reliability decisions? |
 
 -----
 
@@ -166,3 +167,12 @@
 | Who   | Who uses debugging tools (engineers, developers)? |
 
 -----
+
+| Type  | Questions                                                                                  |
+| ----- | ------------------------------------------------------------------------------------------ |
+| What  | What happens if an interrupt modifies a variable used in the main loop without protection? |
+| Why   | Why is real-time behavior hard to guarantee in complex systems?                            |
+| How   | How do you design a fail-safe system using watchdog timers?                                |
+| Where | Where do hardware-software integration issues typically occur?                             |
+| When  | When does adding more features reduce system reliability?                                  |
+| Who   | Who is responsible for system-level debugging—hardware or software engineer?               |
