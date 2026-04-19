@@ -1,8 +1,8 @@
 #1. Introduction to Microcontrollers
 
 | Type  | Questions                                                                                                                                 | | | |
-|       | 🟡 Basic                                                                                                                                  | 🟢 Intermediate | 🔵 Advanced | 🔴 Expert |
 | ----- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------ | ------ | ------ |
+|       | 🟡 Basic | 🟢 Intermediate | 🔵 Advanced | 🔴 Expert |
 | What  | What is a microcontroller?<br> What are its main components?<br> What is the difference between a microcontroller and a microprocessor?   | What is firmware? | What is real-time constraint in microcontrollers? | What defines a hard vs soft real-time system? |
 | Why   | Why are microcontrollers used instead of general-purpose computers in embedded systems?<br> Why are they preferred in low-power applications?<br> Why is it called an embedded system? | Why are microcontrollers optimized for specific tasks? | Why is determinism more important than speed? | Why can adding features break real-time guarantees? |
 | How   | How does a microcontroller execute a program?<br> How is it programmed and debugged?<br> How is a microcontroller different from a computer? | How does a microcontroller boot up? | How does architecture affect execution predictability? | How would you architect a fail-safe embedded system? |
@@ -14,14 +14,14 @@
 
 #2. CPU (Central Processing Unit)
 
-| Type  | Questions                                                                     |
-| ----- | ----------------------------------------------------------------------------- |
-| What  | What is the role of the CPU in a microcontroller? What are registers and ALU? |
-| Why   | Why is the CPU considered the “brain” of the microcontroller?                 |
-| How   | How does the CPU fetch, decode, and execute instructions?                     |
-| Where | Where are registers located and how are they accessed?                        |
-| When  | When does the CPU use interrupts vs polling?                                  |
-| Who   | Who controls CPU operation (clock, instruction set architecture)?             |
+| Type  | Questions                                                                     |      |     |      |
+| ----- | ----------------------------------------------------------------------------- | ---- |---- | ---- |
+|       | 🟡 Basic | 🟢 Intermediate | 🔵 Advanced | 🔴 Expert || What  | What is the role of the CPU in a microcontroller?<br> What are registers and ALU?<br> What is CPU? | What is instruction cycle? | What is pipeline hazard? | What is worst-case execution time (WCET)? |
+| Why   | Why is the CPU considered the “brain” of the microcontroller?<br> Why is CPU needed? | Why use registers instead of memory? | Why do interrupts require context saving? | Why is WCET critical in real-time systems? |
+| How   | How does the CPU fetch, decode, and execute instructions?<br> How does it execute instructions? | How does ALU perform operations? | How does stack corruption occur? | How do you guarantee deterministic execution? |
+| Where | Where are registers located and how are they accessed?<br> Where are registers used? | Where are flags used? | Where does CPU waste cycles? | Where do hidden CPU stalls occur? |
+| When  | When does the CPU use interrupts vs polling?<br> When does CPU stop executing? | When does branching occur? | When does instruction reordering cause bugs? | When does speculative execution fail? |
+| Who   | Who controls CPU operation (clock, instruction set architecture)?<br> Who controls instruction flow? | Who manages stack operations? | Who optimizes assembly vs compiler? | Who validates timing guarantees? |
 
 -----
 
@@ -29,6 +29,7 @@
 
 | Type  | Questions                                                                                              |
 | ----- | ------------------------------------------------------------------------------------------------------ |
+|       | 🟡 Basic | 🟢 Intermediate | 🔵 Advanced | 🔴 Expert |
 | What  | What are RAM, ROM, Flash, and EEPROM? What is the difference between volatile and non-volatile memory? |
 | Why   | Why do microcontrollers use different types of memory?                                                 |
 | How   | How is data stored and retrieved from memory?                                                          |
