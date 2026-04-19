@@ -1,6 +1,6 @@
 #1. Introduction to Microcontrollers
 
-| Type  | Questions                                                                                                                                 | | | |
+| Type  | Questions                                                                                                                                 |        |        |        |
 | ----- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------ | ------ | ------ |
 |       | 🟡 Basic | 🟢 Intermediate | 🔵 Advanced | 🔴 Expert |
 | What  | What is a microcontroller?<br> What are its main components?<br> What is the difference between a microcontroller and a microprocessor?   | What is firmware? | What is real-time constraint in microcontrollers? | What defines a hard vs soft real-time system? |
@@ -27,28 +27,28 @@
 
 # 3. Memory (RAM, ROM, Flash, EEPROM)
 
-| Type  | Questions                                                                                              |
-| ----- | ------------------------------------------------------------------------------------------------------ |
+| Type  | Questions                                                                                              |      |       |      |
+| ----- | ------------------------------------------------------------------------------------------------------ | ---- | ----- | ---- |
 |       | 🟡 Basic | 🟢 Intermediate | 🔵 Advanced | 🔴 Expert |
-| What  | What are RAM, ROM, Flash, and EEPROM? What is the difference between volatile and non-volatile memory? |
-| Why   | Why do microcontrollers use different types of memory?                                                 |
-| How   | How is data stored and retrieved from memory?                                                          |
-| Where | Where is program code stored? Where is temporary data stored?                                          |
-| When  | When is EEPROM preferred over Flash?                                                                   |
-| Who   | Who manages memory allocation (compiler, programmer)?                                                  |
+| What  | What are RAM, ROM, Flash, and EEPROM?<br> What is the difference between volatile and non-volatile memory? | What is stack vs heap? | What is fragmentation? | What is memory protection in MCUs? |
+| Why   | Why do microcontrollers use different types of memory?<br> Why do we need memory? | Why avoid dynamic allocation? | Why is alignment important? | Why is ECC important? |
+| How   | How is data stored and retrieved from memory?<br> How is data stored? | How does memory addressing work? | How does caching affect memory access? | How do you design memory-safe firmware? |
+| Where | Where is program code stored? Where is temporary data stored?<br> Where is program stored? | Where do variables reside? | Where do memory leaks occur? | Where do silent data corruptions happen? | 
+| When  | When is EEPROM preferred over Flash? When is RAM cleared? | When does stack overflow occur? | When does Flash degrade? | When should wear leveling be implemented? |
+| Who   | Who manages memory allocation (compiler, programmer)?<br> Who allocates memory? | Who controls linker memory mapping? | Who manages persistent data storage? | Who audits memory reliability? |
 
 -----
 
 # 4. GPIO (General Purpose Input/Output)
 
-| Type  | Questions                                                 |
-| ----- | --------------------------------------------------------- |
-| What  | What is GPIO? What are input and output pins?             |
-| Why   | Why are GPIO pins essential in microcontrollers?          |
-| How   | How do you configure a GPIO pin as input or output?       |
-| Where | Where are GPIO pins used in real systems (LEDs, buttons)? |
-| When  | When should pull-up or pull-down resistors be used?       |
-| Who   | Who controls GPIO states (software vs hardware)?          |
+| Type  | Questions                                                 | | | |
+| ----- | --------------------------------------------------------- | ----- | ----- | ----- |
+| What  | What is GPIO?<br> What are input and output pins?         | What is pull-up/down resistor? | What is open-drain configuration? | What is signal integrity issue? |
+| Why   | Why are GPIO pins essential in microcontrollers?          | Why do inputs float? | Why is current limiting required? | Why do high-speed GPIO fail? |
+| How   | How do you configure a GPIO pin as input or output?       | How to read digital input? | How does EMI affect GPIO? | How to design robust I/O interfaces? |
+| Where | Where are GPIO pins used in real systems (LEDs, buttons)? | Where do switching errors occur? | Where do short circuits occur? | Where do metastability issues occur? |
+| When  | When should pull-up or pull-down resistors be used?       | When to debounce signals? | When does GPIO latch-up happen? | When does synchronization fail? |
+| Who   | Who controls GPIO states (software vs hardware)?          | Who designs interface circuits? | Who ensures hardware protection? | Who validates hardware reliability? |
 
 -----
 
@@ -80,14 +80,14 @@
 
 7. Interrupts
 
-| Type  | Questions                                                        |
-| ----- | ---------------------------------------------------------------- |
-| What  | What is an interrupt? What are ISR (Interrupt Service Routines)? |
-| Why   | Why are interrupts important in real-time systems?               |
-| How   | How does interrupt handling work step-by-step?                   |
-| Where | Where are interrupts used (sensors, communication)?              |
-| When  | When should interrupts be avoided?                               |
-| Who   | Who prioritizes interrupts (hardware controller)?                |
+| Type  | Questions                                                        | | | |
+| ----- | ---------------------------------------------------------------- | --- | --- | --- |
+| What  | What is an interrupt? What are ISR (Interrupt Service Routines)? | What is interrupt priority? |  What is race condition? | What is interrupt jitter? |
+| Why   | Why are interrupts important in real-time systems?<br> Why use interrupts? | Why avoid long ISR? | Why need critical sections? | Why does ISR timing vary? |
+| How   | How does interrupt handling work step-by-step?<br> How does ISR work? | How does nesting work? | How does reentrancy issue occur? | How to design lock-free systems? |
+| Where | Where are interrupts used (sensors, communication)? | Where does latency occur? | Where does data corruption happen? | Where do deadlocks occur? |
+| When  | When should interrupts be avoided?<br> When triggered? | When disable interrupts? | When use mutex/flags? | When does priority inversion happen? |
+| Who   | Who prioritizes interrupts (hardware controller)?<br> Who handles ISR? | Who schedules execution? | Who ensures concurrency safety? | Who validates real-time safety? |
 
 -----
 
