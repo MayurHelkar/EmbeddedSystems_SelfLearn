@@ -1,0 +1,111 @@
+Questions on Agiliad Pune, Embedded Developer
+
+Must Have Skills 
+      Working knowledge in Embedded C, 
+      Working knowledge in CAN ,  
+      Working knowledge in  Automotive Ethernet (TCP,  FTP, HTTP, Rest API  or any other ethernet application layer protocols), 
+      Experience with Debuggers, 32 bit controllers ( NXP, Infenion).
+      Experience with RTOS based Application Software. 
+      Experience on Unit Test / Functional test.
+
+Here’s a **deep, interview-focused question bank** on **Pointers, Memory Mapping, and Bit Manipulation**, structured in a clean table format. These are not basic questions—they’re the kind that probe real understanding, edge cases, and systems-level thinking.
+
+---
+
+# 🔹 POINTERS (Advanced)
+
+| #  | Question                                                                                           | What Interviewer Is Testing                                  |
+| -- | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| 1  | Explain pointer aliasing and how it affects compiler optimizations.                                | Understanding of low-level optimization & undefined behavior |
+| 2  | What is the difference between `int *p`, `const int *p`, `int *const p`, and `const int *const p`? | Const correctness mastery                                    |
+| 3  | How does pointer arithmetic work internally? Why does `p+1` depend on data type?                   | Memory layout understanding                                  |
+| 4  | What is a dangling pointer? Give real-world scenarios where it occurs.                             | Memory safety                                                |
+| 5  | Difference between shallow copy and deep copy with pointer-based structures.                       | Object lifecycle                                             |
+| 6  | What happens when you dereference a NULL pointer? Is it always a crash?                            | OS + undefined behavior                                      |
+| 7  | Explain function pointers and where they are used in real systems.                                 | Callback systems / abstraction                               |
+| 8  | How are arrays and pointers different despite similar syntax?                                      | Core C/C++ fundamentals                                      |
+| 9  | What is pointer-to-pointer (`int **p`) and where is it useful?                                     | Multi-level memory                                           |
+| 10 | Explain memory fragmentation caused by pointer-heavy allocations.                                  | Heap management                                              |
+| 11 | What is `void*` and why is it dangerous?                                                           | Type safety                                                  |
+| 12 | Explain strict aliasing rule and its consequences.                                                 | Compiler behavior                                            |
+| 13 | How do smart pointers solve manual memory issues? (C++)                                            | Modern C++                                                   |
+| 14 | What is pointer alignment and padding?                                                             | Architecture awareness                                       |
+| 15 | Can you perform arithmetic on `void*`? Why/why not?                                                | Language specifics                                           |
+
+---
+
+# 🔹 MEMORY MAPPING & MEMORY MODEL
+
+| #  | Question                                                                          | What Interviewer Is Testing |
+| -- | --------------------------------------------------------------------------------- | --------------------------- |
+| 1  | Explain the complete memory layout of a C program (stack, heap, data, bss, text). | Systems fundamentals        |
+| 2  | Difference between stack and heap memory allocation.                              | Runtime behavior            |
+| 3  | What is memory mapping (`mmap`)? How does it work internally?                     | OS-level knowledge          |
+| 4  | Explain virtual memory and address translation.                                   | OS + hardware               |
+| 5  | What is paging vs segmentation?                                                   | Memory management           |
+| 6  | What is a page fault? Types?                                                      | OS internals                |
+| 7  | How does demand paging work?                                                      | Performance optimization    |
+| 8  | What is copy-on-write?                                                            | Process optimization        |
+| 9  | Explain shared memory vs memory-mapped files.                                     | IPC mechanisms              |
+| 10 | What happens during a stack overflow?                                             | Memory limits               |
+| 11 | How does the OS protect memory between processes?                                 | Security                    |
+| 12 | What is TLB (Translation Lookaside Buffer)?                                       | CPU-level optimization      |
+| 13 | Explain memory leaks and how OS handles them.                                     | Debugging                   |
+| 14 | What is NUMA architecture?                                                        | Advanced systems            |
+| 15 | Difference between logical and physical address.                                  | Address mapping             |
+| 16 | What is heap corruption and how can it occur?                                     | Debugging complex bugs      |
+| 17 | Explain alignment faults and bus errors.                                          | Hardware interaction        |
+| 18 | What are guard pages?                                                             | Security & debugging        |
+| 19 | Explain how `malloc` works internally.                                            | Runtime allocator           |
+| 20 | Difference between static, dynamic, and automatic storage.                        | Storage classes             |
+
+---
+
+# 🔹 BIT MANIPULATION (Advanced + Tricky)
+
+| #  | Question                                                            | What Interviewer Is Testing |
+| -- | ------------------------------------------------------------------- | --------------------------- |
+| 1  | How do you check if a number is a power of 2 using bits?            | Bit tricks                  |
+| 2  | Count number of set bits efficiently (Brian Kernighan’s algorithm). | Optimization                |
+| 3  | Find the only non-repeating element in an array using XOR.          | Problem-solving             |
+| 4  | How do you swap two numbers without a temporary variable?           | XOR usage                   |
+| 5  | Explain bit masking with real examples.                             | Practical usage             |
+| 6  | How do you extract, set, clear, and toggle specific bits?           | Bit operations mastery      |
+| 7  | What is the difference between `>>` and `>>>`?                      | Language-specific nuance    |
+| 8  | Detect if two integers have opposite signs using bits.              | Clever logic                |
+| 9  | Find missing number using XOR in O(n).                              | Interview classic           |
+| 10 | Reverse bits of a number.                                           | Bit-level manipulation      |
+| 11 | What is endianness? How to detect it?                               | Memory representation       |
+| 12 | How are negative numbers stored? (2’s complement)                   | Binary representation       |
+| 13 | What is bitwise AND used for in masking?                            | Filtering                   |
+| 14 | How to isolate the rightmost set bit?                               | Trick question              |
+| 15 | Explain Gray code and its applications.                             | Advanced concept            |
+| 16 | How to perform fast multiplication/division using shifts?           | Performance                 |
+| 17 | What is population count instruction?                               | CPU-level optimization      |
+| 18 | How do bit fields work in structs?                                  | Memory optimization         |
+| 19 | What are overflow and underflow in bit operations?                  | Edge cases                  |
+| 20 | How to detect if a number is odd/even using bits?                   | Basic but essential         |
+
+---
+
+# 🔥 BONUS: SCENARIO-BASED QUESTIONS (HIGH VALUE)
+
+| # | Question                                                | Focus Area                |
+| - | ------------------------------------------------------- | ------------------------- |
+| 1 | Debug a segmentation fault caused by pointer misuse.    | Debugging                 |
+| 2 | Optimize memory usage in a large-scale system.          | System design             |
+| 3 | Design a memory-efficient cache using bit manipulation. | Real-world application    |
+| 4 | Explain how a database uses memory mapping.             | Systems design            |
+| 5 | Write a custom memory allocator.                        | Deep systems              |
+| 6 | Detect memory leaks in production systems.              | Practical engineering     |
+| 7 | Implement a bitmap for large datasets.                  | Bit manipulation + memory |
+| 8 | Explain how garbage collectors work (high level).       | Runtime systems           |
+
+---
+
+If you want, I can:
+
+* Turn this into **MCQs with answers**
+* Provide **coding problems + solutions**
+* Simulate a **mock interview with follow-ups**
+* Or create a **revision cheat sheet (1-page high impact)**
