@@ -1,6 +1,6 @@
 **Controller Area Network (CAN bus)** used in vehicles and embedded systems.
 
-## 🧠 CAN A vs CAN B vs CAN High (CAN_H) — Detailed Comparison
+## CAN A vs CAN B vs CAN High (CAN_H) — Detailed Comparison
 
 | Feature                       | CAN A                                                      | CAN B                                                | CAN High (CAN_H)                                     |
 | ----------------------------- | ---------------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
