@@ -1,0 +1,780 @@
+# BLE Mesh Smart Onion Storage System on STM32WB55RG — Explained with the 6W Method
+
+A BLE Mesh–based smart onion storage system is an intelligent warehouse/storage monitoring network where multiple wireless sensor nodes continuously monitor onion storage conditions and cooperate using Bluetooth Low Energy (BLE) Mesh networking.
+
+The STMicroelectronics STM32WB55RG is especially suitable because it combines:
+
+* An ARM Cortex-M4 application core
+* A Cortex-M0+ wireless core
+* Integrated Bluetooth 5 / BLE Mesh support
+* Ultra-low power operation
+* Real-time sensing capability
+
+This makes it ideal for distributed agricultural storage monitoring.
+
+---
+
+# 1. WHAT is the Project?
+
+## Core Idea
+
+The project is a **distributed smart onion storage monitoring and control system** using BLE Mesh.
+
+Instead of one centralized controller with many wires:
+
+* Multiple wireless sensor nodes are placed across onion storage racks.
+* Every node measures environmental conditions.
+* Nodes communicate through BLE Mesh.
+* Data is forwarded hop-by-hop to a gateway.
+* The gateway sends data to:
+
+  * Mobile app
+  * Cloud dashboard
+  * Local control system
+
+The system helps reduce:
+
+* Onion rotting
+* Fungal growth
+* Moisture accumulation
+* Sprouting
+* Weight loss
+* Storage inefficiency
+
+---
+
+# Problem in Traditional Onion Storage
+
+Onions are highly sensitive to:
+
+* Humidity
+* Temperature
+* Air circulation
+* Ethylene accumulation
+* Water condensation
+
+Traditional storage problems:
+
+| Problem                | Effect                |
+| ---------------------- | --------------------- |
+| High humidity          | Rotting               |
+| Poor airflow           | Fungal infection      |
+| Temperature variation  | Sprouting             |
+| Manual monitoring      | Human error           |
+| No distributed sensing | Hidden spoilage zones |
+
+Large warehouses often lose 20–40% stock during long storage periods.
+
+---
+
+# Smart BLE Mesh Solution
+
+The BLE Mesh network creates a distributed sensing system.
+
+## Each Node Can Measure
+
+* Temperature
+* Humidity
+* Gas concentration
+* Airflow
+* Light exposure
+* Smoke/fire
+* Door status
+
+## Nodes Cooperate
+
+If one node is far from the gateway:
+
+Node A → Node B → Node C → Gateway
+
+This is the key advantage of mesh networking.
+
+---
+
+# 2. WHY Use BLE Mesh for Onion Storage?
+
+## Why Not Wi-Fi?
+
+| Wi-Fi Issue              | BLE Mesh Advantage   |
+| ------------------------ | -------------------- |
+| High power               | Very low power       |
+| Short battery life       | Multi-year operation |
+| Congestion               | Lightweight protocol |
+| Expensive infrastructure | Low-cost nodes       |
+| Limited scalability      | Thousands of nodes   |
+
+---
+
+## Why BLE Mesh Specifically?
+
+BLE Mesh is ideal because storage warehouses have:
+
+* Multiple compartments
+* Thick walls
+* Long corridors
+* Metal racks
+* Variable environments
+
+Mesh networking solves range limitations.
+
+---
+
+## Why STM32WB55RG?
+
+The STM32WB55RG includes:
+
+| Feature             | Importance                            |
+| ------------------- | ------------------------------------- |
+| Dual-core MCU       | Separate wireless + application tasks |
+| BLE 5 support       | Long range + mesh                     |
+| Low power modes     | Battery operation                     |
+| AES hardware crypto | Secure communication                  |
+| ADC/I2C/SPI/UART    | Sensor interfacing                    |
+| Large Flash/RAM     | Mesh stack support                    |
+
+---
+
+# 3. WHO Uses the System?
+
+## Primary Stakeholders
+
+### Farmers
+
+Monitor stored onion quality remotely.
+
+---
+
+### Warehouse Operators
+
+Detect spoilage zones early.
+
+---
+
+### Agricultural Cooperatives
+
+Monitor large storage networks centrally.
+
+---
+
+### Government Food Agencies
+
+Prevent post-harvest losses.
+
+---
+
+### Exporters
+
+Maintain quality for export-grade onions.
+
+---
+
+### IoT System Integrators
+
+Deploy smart agriculture systems.
+
+---
+
+# 4. WHERE is BLE Mesh Used in Onion Storage?
+
+## Physical Deployment Areas
+
+### Storage Rooms
+
+Nodes installed every few meters.
+
+---
+
+### Onion Piles
+
+Embedded probes monitor internal temperature.
+
+---
+
+### Ventilation Systems
+
+Airflow monitoring nodes.
+
+---
+
+### Cold Storage Facilities
+
+Precision environmental control.
+
+---
+
+### Transport Containers
+
+BLE mesh-enabled transport monitoring.
+
+---
+
+# Example Deployment Architecture
+
+```text
++---------------------------------------------------+
+| Onion Warehouse                                   |
+|                                                   |
+| [Node1]----[Node2]----[Node3]                     |
+|    |           |           |                      |
+| [Node4]----[Node5]----[Node6]                     |
+|                   \                               |
+|                    \                              |
+|                  [Gateway]                        |
+|                       |                           |
+|                 Cloud Dashboard                   |
++---------------------------------------------------+
+```
+
+---
+
+# 5. WHEN Does the System Operate?
+
+## Continuous Monitoring
+
+The system works:
+
+* 24/7
+* During storage
+* During transport
+* During loading/unloading
+* During seasonal storage cycles
+
+---
+
+## Event-Based Monitoring
+
+Alerts generated when:
+
+| Event               | Trigger             |
+| ------------------- | ------------------- |
+| High humidity       | >70% RH             |
+| High temperature    | >30°C               |
+| Gas buildup         | Unsafe level        |
+| Fire/smoke          | Detection           |
+| Ventilation failure | No airflow          |
+| Door opening        | Unauthorized access |
+
+---
+
+# 6. HOW Does the System Work?
+
+# System Architecture
+
+```text
+Sensors → STM32WB55 Node → BLE Mesh → Gateway → Cloud/App
+```
+
+---
+
+# Detailed Technical Flow
+
+---
+
+# A. Sensor Layer
+
+Each STM32WB55 node interfaces with sensors.
+
+## Typical Sensors
+
+| Sensor         | Purpose                |
+| -------------- | ---------------------- |
+| DHT22/SHT31    | Temperature + humidity |
+| MQ gas sensors | Gas detection          |
+| Airflow sensor | Ventilation            |
+| IR sensor      | Presence/detection     |
+| Smoke sensor   | Fire safety            |
+
+---
+
+# B. STM32WB55 Processing Layer
+
+The MCU performs:
+
+* Sensor reading
+* Filtering
+* Threshold analysis
+* Packet creation
+* Encryption
+* Mesh forwarding
+
+---
+
+# Dual-Core Advantage
+
+## Cortex-M4 Core
+
+Handles:
+
+* Application logic
+* Sensor management
+* Local analytics
+
+---
+
+## Cortex-M0+ Core
+
+Handles:
+
+* BLE stack
+* Mesh networking
+* Radio scheduling
+
+This separation improves reliability.
+
+---
+
+# C. BLE Mesh Networking Layer
+
+BLE Mesh uses managed flooding.
+
+## Managed Flooding
+
+Instead of fixed routing:
+
+* Nodes rebroadcast packets intelligently.
+* TTL (Time To Live) prevents endless looping.
+* Relay nodes extend coverage.
+
+---
+
+# BLE Mesh Node Types
+
+| Node Type      | Function                |
+| -------------- | ----------------------- |
+| Relay Node     | Forwards packets        |
+| Low Power Node | Battery-operated sensor |
+| Friend Node    | Stores messages         |
+| Proxy Node     | Connects mobile app     |
+| Gateway Node   | Internet bridge         |
+
+---
+
+# Example Onion Warehouse Network
+
+```text
+Sensor Node → Relay Node → Relay Node → Gateway
+```
+
+Even if one path fails, another may work.
+
+This improves reliability in warehouses.
+
+---
+
+# D. Gateway Layer
+
+The gateway can be:
+
+* Raspberry Pi
+* Industrial PC
+* STM32 gateway
+* Android tablet
+
+Functions:
+
+* Collect mesh data
+* Upload to cloud
+* Trigger alarms
+* Run analytics
+
+---
+
+# E. Cloud / Dashboard Layer
+
+Features include:
+
+* Real-time monitoring
+* Historical analysis
+* Spoilage prediction
+* SMS alerts
+* Mobile notifications
+* AI forecasting
+
+---
+
+# BLE Mesh Stack in STM32WB55
+
+## ST Software Components
+
+Using [STM32CubeWB](https://www.st.com/en/embedded-software/stm32cubewb.html?utm_source=chatgpt.com):
+
+* BLE stack
+* Mesh middleware
+* Provisioning libraries
+* Security libraries
+* RTOS support
+
+---
+
+# BLE Mesh Layers
+
+```text
+Application Layer
+Model Layer
+Access Layer
+Upper Transport
+Lower Transport
+Network Layer
+Bearer Layer
+Bluetooth Radio
+```
+
+---
+
+# Provisioning Process
+
+Provisioning means securely adding nodes to the mesh.
+
+Steps:
+
+1. Node powers on
+2. Gateway discovers node
+3. Authentication occurs
+4. Encryption keys assigned
+5. Node joins mesh
+
+---
+
+# Security Architecture
+
+BLE Mesh security is very important.
+
+## Security Features
+
+| Feature            | Purpose               |
+| ------------------ | --------------------- |
+| AES-CCM encryption | Data confidentiality  |
+| Network keys       | Mesh security         |
+| Application keys   | App isolation         |
+| Device keys        | Unique authentication |
+
+---
+
+# Power Management
+
+## Low-Power Operation
+
+STM32WB55 supports:
+
+* Sleep modes
+* Stop modes
+* Wake-on-interrupt
+* RTC wake-up
+
+Battery nodes may operate for months/years.
+
+---
+
+# Data Flow Example
+
+## Scenario
+
+Humidity rises near onion pile.
+
+### Step-by-step
+
+1. Sensor detects 78% RH
+2. STM32WB55 processes data
+3. Alert packet generated
+4. Packet relayed via BLE mesh
+5. Gateway receives alert
+6. Fan activated
+7. Mobile notification sent
+
+---
+
+# Important BLE Mesh Concepts
+
+# 1. Provisioner
+
+Controls mesh formation.
+
+Usually gateway device.
+
+---
+
+# 2. Publish/Subscribe Model
+
+Nodes publish sensor data.
+
+Other nodes subscribe to needed data.
+
+Example:
+
+* Fan controller subscribes to humidity alerts.
+
+---
+
+# 3. TTL (Time To Live)
+
+Limits packet rebroadcast distance.
+
+---
+
+# 4. Friendship Feature
+
+Low-power nodes sleep frequently.
+
+Friend nodes store packets for them.
+
+---
+
+# Hardware Design Considerations
+
+# PCB Design
+
+Important factors:
+
+* RF antenna clearance
+* Ground plane isolation
+* Decoupling capacitors
+* Sensor noise filtering
+
+---
+
+# Antenna Considerations
+
+BLE performance depends heavily on:
+
+* Antenna matching
+* Warehouse reflections
+* Metal obstruction
+* Node placement
+
+---
+
+# Industrial Challenges
+
+## 1. RF Interference
+
+Metal racks attenuate signals.
+
+Solution:
+
+* More relay nodes
+* Proper antenna orientation
+
+---
+
+## 2. Humidity Exposure
+
+Need conformal coating.
+
+---
+
+## 3. Battery Replacement
+
+Need low-power firmware strategy.
+
+---
+
+# Firmware Architecture
+
+Typical firmware modules:
+
+```text
+main.c
+sensor_manager.c
+mesh_manager.c
+power_manager.c
+alarm_manager.c
+gateway_interface.c
+```
+
+---
+
+# RTOS-Based Design
+
+Using FreeRTOS:
+
+Tasks:
+
+| Task        | Priority |
+| ----------- | -------- |
+| BLE stack   | High     |
+| Sensor read | Medium   |
+| Cloud sync  | Medium   |
+| Logging     | Low      |
+
+---
+
+# Communication Models
+
+# Unicast
+
+One-to-one communication.
+
+---
+
+# Group Communication
+
+All ventilation nodes receive command.
+
+---
+
+# Broadcast
+
+Emergency alerts.
+
+---
+
+# Scalability
+
+BLE Mesh can support:
+
+* Hundreds of nodes
+* Multiple warehouse zones
+* Multi-floor deployment
+
+---
+
+# AI/Advanced Extensions
+
+Future improvements:
+
+## Predictive Spoilage Detection
+
+Machine learning predicts rot formation.
+
+---
+
+## Digital Twin Storage Model
+
+Simulated warehouse behavior.
+
+---
+
+## Energy Optimization
+
+Smart fan scheduling.
+
+---
+
+# Advantages of This Project
+
+| Advantage      | Explanation       |
+| -------------- | ----------------- |
+| Low power      | Battery operation |
+| Wireless       | Easy installation |
+| Scalable       | Large warehouses  |
+| Fault tolerant | Mesh redundancy   |
+| Secure         | BLE encryption    |
+| Cost-effective | Reduced wiring    |
+
+---
+
+# Limitations
+
+| Limitation           | Issue              |
+| -------------------- | ------------------ |
+| BLE bandwidth        | Limited throughput |
+| RF attenuation       | Metal interference |
+| Flooding overhead    | More traffic       |
+| Complex provisioning | Large deployments  |
+
+---
+
+# Suggested Real Hardware Setup
+
+| Component     | Example                |
+| ------------- | ---------------------- |
+| MCU           | STM32WB55RG            |
+| Temp/Humidity | SHT31                  |
+| Gas sensor    | MQ135                  |
+| Fan control   | Relay module           |
+| Gateway       | Raspberry Pi           |
+| Power         | Li-ion battery + solar |
+
+---
+
+# Software Development Flow
+
+## Development Tools
+
+* [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html?utm_source=chatgpt.com)
+* [STM32CubeMX](https://www.st.com/en/development-tools/stm32cubemx.html?utm_source=chatgpt.com)
+* BLE Mesh middleware
+* FreeRTOS
+* Mobile BLE app
+
+---
+
+# Practical Engineering Workflow
+
+## Phase 1 — Prototype
+
+Single sensor node + gateway.
+
+---
+
+## Phase 2 — Mesh Formation
+
+Add relay nodes.
+
+---
+
+## Phase 3 — Cloud Integration
+
+Dashboard and alerts.
+
+---
+
+## Phase 4 — Automation
+
+Fan/ventilation control.
+
+---
+
+## Phase 5 — AI Analytics
+
+Spoilage prediction.
+
+---
+
+# Sample Sensor Packet Structure
+
+```text
+{
+ Node_ID: 12,
+ Temperature: 28.4,
+ Humidity: 76.2,
+ Gas_Level: 210,
+ Battery: 3.7V,
+ Timestamp: 12345678
+}
+```
+
+---
+
+# Educational Value of the Project
+
+This project combines:
+
+| Domain                 | Knowledge Area       |
+| ---------------------- | -------------------- |
+| Embedded systems       | STM32 firmware       |
+| Wireless communication | BLE Mesh             |
+| IoT                    | Cloud integration    |
+| Agriculture tech       | Smart storage        |
+| Networking             | Mesh topology        |
+| Power electronics      | Low-power systems    |
+| Data science           | Predictive analytics |
+
+---
+
+# Final Technical Summary
+
+The project is essentially a:
+
+> Distributed low-power IoT environmental monitoring and control system for onion preservation using BLE Mesh networking on STM32WB55RG.
+
+It combines:
+
+* Embedded firmware
+* Wireless mesh networking
+* Real-time sensing
+* IoT cloud systems
+* Agricultural automation
+* Industrial monitoring
+
+into one scalable smart agriculture platform.
